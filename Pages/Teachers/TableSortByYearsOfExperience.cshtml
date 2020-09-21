@@ -1,0 +1,65 @@
+﻿@page
+@model WebApplicationMBegyn.Pages.Teachers.TableSortByYearsOfExperienceModel
+@{
+    ViewData["Title"] = "TableSortByYearsOfExperience";
+}
+
+
+<h1>Teachers sorted by years of experience</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher[0].NbOfClasses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher[0].NbOfTeachingExperience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher[0].PhoneNumber)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Teacher)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NbOfClasses)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NbOfTeachingExperience)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

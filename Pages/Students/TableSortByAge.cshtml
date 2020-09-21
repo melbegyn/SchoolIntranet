@@ -1,0 +1,65 @@
+﻿@page
+@model WebApplicationMBegyn.Pages.Students.TableFilterPerAgeModel
+@{
+    ViewData["Title"] = "TableFilterPerAge";
+}
+
+<h1>Students sorted by age</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].AverageGrade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].NbOfCourses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].PhoneNumber)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Student)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AverageGrade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NbOfCourses)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

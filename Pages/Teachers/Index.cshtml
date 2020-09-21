@@ -1,0 +1,27 @@
+﻿@page
+@model WebApplicationMBegyn.Pages.Teachers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Teachers</h1>
+
+
+<div class="text-center">
+    <div class="border border-primary rounded text-dark" style="margin:5px;">
+        <a class="nav-link" asp-area="" asp-page="/Teachers/CRUD">Add / Edit / Delete a teacher</a>
+    </div>
+
+    <div class="border border-primary rounded text-dark" style="margin:5px;">
+        <a class="nav-link" asp-area="" asp-page="/Teachers/TableSortByFirstName">Teachers list sorted by first name</a>
+    </div>
+
+    <div class="border border-primary rounded text-dark" style="margin:5px;">
+        <a class="nav-link" asp-area="" asp-page="/Teachers/TableSortByNumberOfClass">Teachers list sorted by number of class</a>
+    </div>
+
+    <div class="border border-primary rounded text-dark" style="margin:5px;">
+        <a class="nav-link" asp-area="" asp-page="/Teachers/TableSortByYearsOfExperience">Teachers list sorted by years of experience</a>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿@page
+@model WebApplicationMBegyn.Pages.Students.CRUDModel
+@{
+    ViewData["Title"] = "CRUD";
+}
+
+
+<h1>Students list</h1>
+<div>Add a new student, edit or delete a student.</div>
+<br />
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].AverageGrade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].NbOfCourses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Student)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AverageGrade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NbOfCourses)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.StudentID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.StudentID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.StudentID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
